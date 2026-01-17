@@ -1,15 +1,15 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>WayToGo</Text>
+    <View>
+      {/* Daily Info Section */}
+
+      {/* On Page Menu Navigation */}
+
+      {/* Display Info Cards Section */}
+
+      {/* Footer */}
     </View>
   );
 }
