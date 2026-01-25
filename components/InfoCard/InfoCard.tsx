@@ -4,10 +4,12 @@ import { StyleSheet, Text, View } from "react-native";
 
 interface InfoCardProps {
   contentTitle?: string;
+  iconSrc: string;
+  contentDescription: string;
 }
 
 export default function InfoCard(props: InfoCardProps) {
-  const { contentTitle } = props;
+  const { contentTitle, iconSrc, contentDescription } = props;
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
@@ -17,6 +19,7 @@ export default function InfoCard(props: InfoCardProps) {
         />
         <Text style={styles.text}>{contentTitle}</Text>
       </View>
+      <Text style={styles.amount}>{contentDescription}</Text>
     </View>
   );
 }
@@ -24,12 +27,13 @@ export default function InfoCard(props: InfoCardProps) {
 const styles = StyleSheet.create({
   container: {
     borderRadius: WayToGoTheme.borderRadius.xl,
-    width: 150,
+    width: 180,
     height: 100,
     borderWidth: 1,
     borderColor: WayToGoTheme.light.colors.border,
-    margin: WayToGoTheme.spacing.xl,
+    margin: WayToGoTheme.spacing.sm,
     backgroundColor: WayToGoTheme.light.colors.card,
+    padding: WayToGoTheme.spacing.md,
   },
   image: {
     width: 20,
@@ -40,9 +44,17 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    padding: WayToGoTheme.spacing.sm,
+    paddingBottom: WayToGoTheme.spacing.sm,
   },
   text: {
-    color: WayToGoTheme.light.colors.foreground,
+    color: WayToGoTheme.light.colors.mutedForeground,
+    fontSize: 13,
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+  },
+  amount: {
+    fontWeight: 600,
+    fontSize: 25,
   },
 });

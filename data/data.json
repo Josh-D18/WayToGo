@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "All Feed"
+  },
+  {
+    "id": "2",
+    "title": "Fare"
+  },
+  {
+    "id": "3",
+    "title": "Delays"
+  },
+  {
+    "id": "4",
+    "title": "Alert"
+  },
+  {
+    "id": "5",
+    "title": "Crowds"
+  }
+]
