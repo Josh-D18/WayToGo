@@ -1,10 +1,11 @@
+import { DisplayCards } from "@/components/DisplayCards/DisplayCards";
 import FeedNavigation from "@/components/FeedNavigation/FeedNavigation";
-import InfoCard from "@/components/InfoCard/InfoCard";
+import { getWindowHeight } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
 import { useState } from "react";
-import { Dimensions, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-const windowHeight = Dimensions.get("window").height;
+const windowHeight = getWindowHeight();
 
 export default function Index() {
   const [isActive, setIsActive] = useState(false);
@@ -13,21 +14,21 @@ export default function Index() {
     <View style={styles.main}>
       {/* Daily Info Section */}
       <View style={styles.container}>
-        <InfoCard
+        {/* <InfoCard
           contentTitle="Active"
-          iconSrc="../../assets/images/users.svg"
+          IconComponent={Users}
           contentDescription="2,847"
         />
         <InfoCard
           contentTitle="Reports"
-          iconSrc="../../assets/images/users.svg"
+          IconComponent={Zap}
           contentDescription="4"
-        />
+        /> */}
       </View>
       {/* On Page Menu Navigation */}
       <FeedNavigation />
       {/* Display Info Cards Section */}
-
+      <DisplayCards />
       {/* Footer */}
     </View>
   );
@@ -39,10 +40,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    margin: WayToGoTheme.spacing.xl,
   },
   main: {
     backgroundColor: WayToGoTheme.light.colors.background,
     height: windowHeight,
+    padding: WayToGoTheme.spacing.sm,
   },
 });

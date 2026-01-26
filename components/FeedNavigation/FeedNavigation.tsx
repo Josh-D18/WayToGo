@@ -1,6 +1,6 @@
 import DATA from "@/data/data.json";
-import { WayToGoTheme } from "@/theme-rn";
-import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native";
+import { Dimensions, FlatList, StyleSheet, View } from "react-native";
+import { Feed } from "./ui/Feed";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -12,11 +12,7 @@ export default function FeedNavigation() {
         data={DATA}
         keyExtractor={(item) => item.id}
         horizontal={true}
-        renderItem={({ item }) => (
-          <View style={styles.contentContainer}>
-            <Text style={styles.itemText}>{item.title}</Text>
-          </View>
-        )}
+        renderItem={({ item }) => <Feed item={item} />}
       />
     </View>
   );
@@ -24,26 +20,6 @@ export default function FeedNavigation() {
 
 const styles = StyleSheet.create({
   container: {
-    margin: WayToGoTheme.spacing.xl,
-    width: windowWidth - 4,
-  },
-  itemText: {
-    borderColor: "gray",
-    width: 100,
-    height: 55,
-    marginRight: 10,
-    borderRadius: 100,
-    padding: 15,
-    backgroundColor: "#ffff",
-    textAlign: "center",
-    borderWidth: 1,
-    borderStartColor: WayToGoTheme.light.colors.muted,
-  },
-  contentContainer: {
-    display: "flex",
-    borderRadius: 100,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    width: windowWidth,
   },
 });

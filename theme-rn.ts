@@ -13,6 +13,7 @@ export const WayToGoTheme = {
       border: "#e6ede9",
       muted: "#f0f3f1",
       mutedForeground: "#727d76",
+      pillInactiveText: "#6f8f7d",
 
       // Status & Reports
       fare: { main: "#2563eb", bg: "#eff6ff" },

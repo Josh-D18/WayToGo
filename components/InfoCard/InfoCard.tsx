@@ -1,22 +1,21 @@
+import { getWindowWidth } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
-import { Image } from "expo-image";
+import { LucideIcon } from "lucide-react-native";
 import { StyleSheet, Text, View } from "react-native";
 
 interface InfoCardProps {
   contentTitle?: string;
-  iconSrc: string;
+  IconComponent: LucideIcon;
   contentDescription: string;
 }
+const windowWidth = getWindowWidth();
 
 export default function InfoCard(props: InfoCardProps) {
-  const { contentTitle, iconSrc, contentDescription } = props;
+  const { contentTitle, IconComponent, contentDescription } = props;
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <Image
-          source={require("../../assets/images/users.svg")}
-          style={styles.image}
-        />
+        <IconComponent />
         <Text style={styles.text}>{contentTitle}</Text>
       </View>
       <Text style={styles.amount}>{contentDescription}</Text>
@@ -27,13 +26,14 @@ export default function InfoCard(props: InfoCardProps) {
 const styles = StyleSheet.create({
   container: {
     borderRadius: WayToGoTheme.borderRadius.xl,
-    width: 180,
+    width: windowWidth <= 720 ? 160 : 180,
     height: 100,
     borderWidth: 1,
     borderColor: WayToGoTheme.light.colors.border,
     margin: WayToGoTheme.spacing.sm,
     backgroundColor: WayToGoTheme.light.colors.card,
     padding: WayToGoTheme.spacing.md,
+    marginBottom: 20,
   },
   image: {
     width: 20,

@@ -13,20 +13,20 @@ export const Header = () => {
           />
         </View>
         <View>
-          <Text style={styles.headerTitle}>Way to Go</Text>
+          <Text style={styles.headerTitle}>WayToGo</Text>
         </View>
       </View>
       <View style={styles.iconContainer}>
         <Pressable onPress={() => {}}>
           <Image
             source={require("../../assets/images/search.svg")}
-            style={styles.headerSettingsIcon}
+            style={styles.headerSelectionIcons}
           />
         </Pressable>
         <Pressable onPress={() => {}}>
           <Image
             source={require("../../assets/images/settings.svg")}
-            style={styles.headerSettingsIcon}
+            style={styles.headerSelectionIcons}
           />
         </Pressable>
       </View>
@@ -52,26 +52,26 @@ const styles = StyleSheet.create({
 
   headerTitle: {
     color: "black",
-    fontSize: 17,
+    fontSize: 20,
     fontWeight: "600",
-    textTransform: "capitalize",
+    height: 30,
   },
 
   headerIcon: {
-    width: 35,
-    height: 35,
+    width: 25,
+    height: 25,
   },
 
   headerIconContentContainer: {
     backgroundColor: WayToGoTheme.light.colors.primary,
-    borderRadius: WayToGoTheme.borderRadius.xl,
+    borderRadius: WayToGoTheme.borderRadius.lg,
     padding: 7,
     marginRight: 8,
   },
 
-  headerSettingsIcon: {
-    width: 30,
-    height: 30,
+  headerSelectionIcons: {
+    width: 25,
+    height: 25,
   },
 
   iconContainer: {
