@@ -8,6 +8,7 @@ interface InfoCardProps {
   IconComponent: LucideIcon;
   contentDescription: string;
 }
+
 const windowWidth = getWindowWidth();
 
 export default function InfoCard(props: InfoCardProps) {
@@ -15,7 +16,7 @@ export default function InfoCard(props: InfoCardProps) {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <IconComponent />
+        <IconComponent color={"#22a061"} />
         <Text style={styles.text}>{contentTitle}</Text>
       </View>
       <Text style={styles.amount}>{contentDescription}</Text>
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     textTransform: "uppercase",
     letterSpacing: 1,
+    marginLeft: 7,
   },
   amount: {
     fontWeight: 600,

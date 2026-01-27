@@ -1,7 +1,9 @@
 import { DisplayCards } from "@/components/DisplayCards/DisplayCards";
 import FeedNavigation from "@/components/FeedNavigation/FeedNavigation";
+import InfoCard from "@/components/InfoCard/InfoCard";
 import { getWindowHeight } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
+import { Users, Zap } from "lucide-react-native";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
@@ -14,7 +16,7 @@ export default function Index() {
     <View style={styles.main}>
       {/* Daily Info Section */}
       <View style={styles.container}>
-        {/* <InfoCard
+        <InfoCard
           contentTitle="Active"
           IconComponent={Users}
           contentDescription="2,847"
@@ -23,7 +25,7 @@ export default function Index() {
           contentTitle="Reports"
           IconComponent={Zap}
           contentDescription="4"
-        /> */}
+        />
       </View>
       {/* On Page Menu Navigation */}
       <FeedNavigation />
