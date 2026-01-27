@@ -1,22 +1,27 @@
 [
   {
     "id": "1",
-    "title": "All Feed"
+    "title": "All Feed",
+    "active": true
   },
   {
     "id": "2",
-    "title": "Fare"
+    "title": "Fare",
+    "active": false
   },
   {
     "id": "3",
-    "title": "Delays"
+    "title": "Delays",
+    "active": false
   },
   {
     "id": "4",
-    "title": "Alert"
+    "title": "Alert",
+    "active": false
   },
   {
     "id": "5",
-    "title": "Crowds"
+    "title": "Crowds",
+    "active": false
   }
 ]

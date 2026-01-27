@@ -29,9 +29,11 @@ export const Card = (props: CardProps) => {
   } = props;
   return (
     <View style={[styles.flexContainer, styles.container]}>
-      <Shield color={"#0080FE"} />
+      <View style={styles.iconBackground}>
+        <Shield color={"#0080FE"} style={styles.icon} size={25} />
+      </View>
       <View style={styles.mainContainer}>
-        <View style={styles.titleContainer}>
+        <View style={[styles.titleContainer, styles.flexContainer]}>
           <Text>{stationTitle}</Text>
           <Text>{timeSince} ago</Text>
         </View>
@@ -62,18 +64,18 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: WayToGoTheme.light.colors.primaryForeground,
-    margin: 16,
+    margin: 25,
     borderRadius: 10,
     borderLeftColor: "blue",
     borderLeftWidth: 5,
     height: 110,
   },
   titleContainer: {
-    display: "flex",
-    flexDirection: "row",
+    justifyContent: "space-around",
   },
   mainContainer: {
     height: "auto",
+    margin: 12,
   },
   locationContainer: {
     display: "flex",
@@ -82,5 +84,15 @@ const styles = StyleSheet.create({
   iconContainer: {
     display: "flex",
     flexDirection: "row",
+  },
+  icon: {
+    margin: 12,
+  },
+  iconBackground: {
+    backgroundColor: WayToGoTheme.light.colors.fare.bg,
+    borderRadius: WayToGoTheme.borderRadius.md,
+    width: 50,
+    height: 50,
+    margin: 3,
   },
 });
