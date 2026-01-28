@@ -12,7 +12,8 @@ export default function FeedNavigation() {
         data={DATA}
         keyExtractor={(item) => item.id}
         horizontal={true}
-        renderItem={({ item }) => <Feed item={item} isActive={item.active} />}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <Feed item={item} />}
       />
     </View>
   );

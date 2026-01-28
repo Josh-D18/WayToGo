@@ -37,17 +37,21 @@ export const Card = (props: CardProps) => {
           <Text>{stationTitle}</Text>
           <Text>{timeSince} ago</Text>
         </View>
-        <Text>{description}</Text>
+        <Text style={styles.description} ellipsizeMode="tail" numberOfLines={2}>
+          {description}
+        </Text>
         <View style={[styles.flexContainer, styles.locationContainer]}>
-          <MapPin />
-          <Text>{stationLocation}</Text>
+          <View style={[styles.flexContainer, styles.stationPinContainer]}>
+            <MapPin size={14} color={"gray"} />
+            <Text style={styles.stationLocationText}>{stationLocation}</Text>
+          </View>
           <View style={[styles.flexContainer, styles.iconContainer]}>
-            <View style={styles.flexContainer}>
-              <ArrowUpFromDot size={18} />
+            <View style={[styles.flexContainer, styles.iconBottomContainer]}>
+              <ArrowUpFromDot size={16} style={styles.bottomIcon} />
               <Text>{upvoteAmount}</Text>
             </View>
             <View style={styles.flexContainer}>
-              <MessageCircle size={18} />
+              <MessageCircle size={16} style={styles.bottomIcon} />
               <Text>{commentsAmount}</Text>
             </View>
           </View>
@@ -68,31 +72,58 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderLeftColor: "blue",
     borderLeftWidth: 5,
-    height: 110,
+    height: 130,
+    boxShadow: "0 3px 2px rgba(0, 0, 0, 0.1)",
+    width: 300,
+    padding: 4,
   },
   titleContainer: {
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    maxWidth: 210,
+    width: "100%",
+    marginBottom: 4,
   },
   mainContainer: {
     height: "auto",
     margin: 12,
   },
   locationContainer: {
-    display: "flex",
-    flexDirection: "row",
+    marginTop: 5,
+    justifyContent: "space-between",
   },
   iconContainer: {
-    display: "flex",
-    flexDirection: "row",
+    justifyContent: "space-around",
   },
   icon: {
-    margin: 12,
+    margin: 10,
   },
   iconBackground: {
     backgroundColor: WayToGoTheme.light.colors.fare.bg,
-    borderRadius: WayToGoTheme.borderRadius.md,
-    width: 50,
-    height: 50,
-    margin: 3,
+    borderRadius: WayToGoTheme.borderRadius.xl,
+    width: 45,
+    height: 45,
+    marginLeft: 10,
+    marginTop: 10,
+  },
+  description: {
+    width: 200,
+    marginRight: 6,
+    marginBottom: 10,
+    fontSize: 16,
+    fontWeight: 600,
+  },
+  stationLocationText: {
+    color: "gray",
+    marginLeft: 3,
+    fontSize: 13,
+  },
+  stationPinContainer: {
+    alignItems: "center",
+  },
+  iconBottomContainer: {
+    marginRight: 15,
+  },
+  bottomIcon: {
+    marginRight: 4,
   },
 });

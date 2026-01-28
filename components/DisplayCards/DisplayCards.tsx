@@ -7,7 +7,9 @@ export const DisplayCards = () => {
       <Card
         stationTitle={"LakeShore West"}
         timeSince={"40m"}
-        description={"Fare inspectors checking PRESTO cards on Platform"}
+        description={
+          "Fare inspectors checking PRESTO cards on Platform. This is longer text for a test!"
+        }
         stationLocation={"Union Station"}
         upvoteAmount={26}
         commentsAmount={5}

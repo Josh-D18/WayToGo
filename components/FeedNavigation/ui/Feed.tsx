@@ -2,15 +2,14 @@ import { WayToGoTheme } from "@/theme-rn";
 import { StyleSheet, Text, View } from "react-native";
 
 interface FeedProps {
-  item: { title: string };
-  isActive?: boolean;
+  item: { title: string; active: boolean };
 }
 
 export const Feed = (props: FeedProps) => {
-  const { item, isActive } = props;
+  const { item } = props;
   return (
     <View style={styles.contentContainer}>
-      <Text style={[styles.itemText, isActive && styles.activeText]}>
+      <Text style={[styles.itemText, item.active && styles.activeText]}>
         {item.title}
       </Text>
     </View>
