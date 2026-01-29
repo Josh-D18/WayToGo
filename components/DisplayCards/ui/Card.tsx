@@ -5,6 +5,7 @@ import {
   MessageCircle,
   Shield,
 } from "lucide-react-native";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 interface CardProps {
@@ -27,6 +28,8 @@ export const Card = (props: CardProps) => {
     commentsAmount,
     type,
   } = props;
+
+  
   return (
     <View style={[styles.flexContainer, styles.container]}>
       <View style={styles.iconBackground}>
@@ -34,8 +37,8 @@ export const Card = (props: CardProps) => {
       </View>
       <View style={styles.mainContainer}>
         <View style={[styles.titleContainer, styles.flexContainer]}>
-          <Text>{stationTitle}</Text>
-          <Text>{timeSince} ago</Text>
+          <Text style={styles.title}>{stationTitle}</Text>
+          <Text style={styles.timeSince}>{timeSince} ago</Text>
         </View>
         <Text style={styles.description} ellipsizeMode="tail" numberOfLines={2}>
           {description}
@@ -47,12 +50,12 @@ export const Card = (props: CardProps) => {
           </View>
           <View style={[styles.flexContainer, styles.iconContainer]}>
             <View style={[styles.flexContainer, styles.iconBottomContainer]}>
-              <ArrowUpFromDot size={16} style={styles.bottomIcon} />
-              <Text>{upvoteAmount}</Text>
+              <ArrowUpFromDot size={15} style={[styles.bottomIcon]} />
+              <Text style={styles.bottomText}>{upvoteAmount}</Text>
             </View>
-            <View style={styles.flexContainer}>
-              <MessageCircle size={16} style={styles.bottomIcon} />
-              <Text>{commentsAmount}</Text>
+            <View style={[styles.flexContainer, styles.iconBottomContainer]}>
+              <MessageCircle size={15} style={[styles.bottomIcon]} />
+              <Text style={styles.bottomText}>{commentsAmount}</Text>
             </View>
           </View>
         </View>
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
     borderLeftColor: "blue",
     borderLeftWidth: 5,
     height: 130,
-    boxShadow: "0 3px 2px rgba(0, 0, 0, 0.1)",
+    boxShadow: "2px 3px 2px rgba(0, 0, 0, 0.1)",
     width: 300,
     padding: 4,
   },
@@ -116,14 +119,33 @@ const styles = StyleSheet.create({
     color: "gray",
     marginLeft: 3,
     fontSize: 13,
+    fontWeight: 500,
   },
   stationPinContainer: {
     alignItems: "center",
   },
   iconBottomContainer: {
-    marginRight: 15,
+    marginRight: 13,
+    alignItems: "center",
   },
   bottomIcon: {
     marginRight: 4,
+    color: "gray",
+  },
+  timeSince: {
+    fontSize: 13,
+    color: "gray",
+    fontWeight: 500,
+  },
+  title: {
+    fontWeight: 600,
+    color: "gray",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    fontSize: 13,
+  },
+  bottomText: {
+    color: "gray",
+    fontWeight: 600,
   },
 });

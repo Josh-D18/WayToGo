@@ -4,7 +4,8 @@ import InfoCard from "@/components/InfoCard/InfoCard";
 import { getWindowHeight } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
 import { Users, Zap } from "lucide-react-native";
-import { useState } from "react";
+import React, { useState } from "react";
+
 import { StyleSheet, View } from "react-native";
 
 const windowHeight = getWindowHeight();
@@ -31,7 +32,8 @@ export default function Index() {
       <FeedNavigation />
       {/* Display Info Cards Section */}
       <DisplayCards />
-      {/* Footer */}
+      {/* Settings */}
+      {/* <SettingsSlider /> */}
     </View>
   );
 }

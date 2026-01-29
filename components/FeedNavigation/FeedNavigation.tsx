@@ -1,7 +1,7 @@
 import DATA from "@/data/data.json";
+import React from "react";
 import { Dimensions, FlatList, StyleSheet, View } from "react-native";
 import { Feed } from "./ui/Feed";
-
 const windowWidth = Dimensions.get("window").width;
 
 export default function FeedNavigation() {

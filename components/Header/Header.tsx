@@ -1,7 +1,8 @@
 import { WayToGoTheme } from "@/theme-rn";
 import { Image } from "expo-image";
+import { Search, Settings } from "lucide-react-native";
+import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-
 export const Header = () => {
   return (
     <View style={styles.headerContainer}>
@@ -18,16 +19,10 @@ export const Header = () => {
       </View>
       <View style={styles.iconContainer}>
         <Pressable onPress={() => {}}>
-          <Image
-            source={require("../../assets/images/search.svg")}
-            style={styles.headerSelectionIcons}
-          />
+          <Search style={styles.headerSelectionIcons} />
         </Pressable>
         <Pressable onPress={() => {}}>
-          <Image
-            source={require("../../assets/images/settings.svg")}
-            style={styles.headerSelectionIcons}
-          />
+          <Settings style={styles.headerSelectionIcons} />
         </Pressable>
       </View>
     </View>

@@ -1,6 +1,6 @@
 import { WayToGoTheme } from "@/theme-rn";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-
 interface FeedProps {
   item: { title: string; active: boolean };
 }

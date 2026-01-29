@@ -1,8 +1,8 @@
 import { getWindowWidth } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
 import { LucideIcon } from "lucide-react-native";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-
 interface InfoCardProps {
   contentTitle?: string;
   IconComponent: LucideIcon;

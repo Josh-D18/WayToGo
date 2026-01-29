@@ -1,6 +1,6 @@
+import React from "react";
 import { StyleSheet, View } from "react-native";
 import { Card } from "./ui/Card";
-
 export const DisplayCards = () => {
   return (
     <View style={styles.container}>
