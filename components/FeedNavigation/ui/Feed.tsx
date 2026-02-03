@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 interface FeedProps {
   item: { title: string; active: boolean };
+  onPress: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Feed = (props: FeedProps) => {

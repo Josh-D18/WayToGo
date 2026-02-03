@@ -17,11 +17,15 @@ export const SettingsSlider = (props: SettingsSliderProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <Pressable onPress={() => setActive(!active)}>
-          <CircleX />
-        </Pressable>
+        <View style={styles.closeIconContainer}>
+          <Pressable onPress={() => setActive(!active)}>
+            <CircleX size={25} />
+          </Pressable>
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>Settings</Text>
+        </View>
       </View>
-      <Text>Settings</Text>
     </View>
   );
 };
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
   container: {
     position: "absolute",
     backgroundColor: WayToGoTheme.light.colors.card,
-    width: windowWidth,
+    width: windowWidth - 35,
     height: windowHeight,
     borderRadius: 30,
     left: 50,
@@ -39,5 +43,24 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 
-  iconContainer: {},
+  iconContainer: {
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+  },
+
+  textContainer: {
+    alignSelf: "center",
+  },
+
+  closeIconContainer: {
+    alignSelf: "flex-end",
+    marginRight: 35,
+    marginTop: 20,
+  },
+  text: {
+    fontSize: 22,
+    fontWeight: 600,
+    marginRight: 10,
+  },
 });
