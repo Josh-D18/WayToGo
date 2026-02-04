@@ -1,7 +1,7 @@
 import { getWindowHeight, getWindowWidth } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
 import { Bell, CircleX, Moon } from "lucide-react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Pressable, StyleSheet, Switch, Text, View } from "react-native";
 
 interface SettingsSliderProps {
@@ -14,6 +14,9 @@ const windowWidth = getWindowWidth();
 
 export const SettingsSlider = (props: SettingsSliderProps) => {
   const { active, setActive } = props;
+
+  const [activeSwitch, setActiveSwitch] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
@@ -33,6 +36,8 @@ export const SettingsSlider = (props: SettingsSliderProps) => {
               trackColor={{ false: "#767577", true: "#81b0ff" }}
               ios_backgroundColor="#3e3e3e"
               style={styles.switch}
+              onValueChange={setActiveSwitch}
+              value={activeSwitch}
             />
           </View>
           <View style={styles.settingContentContainer}>
@@ -42,6 +47,8 @@ export const SettingsSlider = (props: SettingsSliderProps) => {
               trackColor={{ false: "#767577", true: "#81b0ff" }}
               ios_backgroundColor="#3e3e3e"
               style={styles.switch}
+              onValueChange={setActiveSwitch}
+              value={activeSwitch}
             />
           </View>
         </View>
@@ -90,22 +97,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 17,
     width: "100%",
+    alignSelf: "stretch",
   },
   switch: {
     marginRight: 20,
-    alignSelf: "flex-end",
   },
-
   icon: {
     marginHorizontal: 20,
   },
-
   optionsText: {
     fontSize: 19,
     fontWeight: 600,
+    marginRight: 90,
+    width: 115,
   },
-
   settingOptionsContainer: {
     marginTop: 25,
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-around",
   },
 });
