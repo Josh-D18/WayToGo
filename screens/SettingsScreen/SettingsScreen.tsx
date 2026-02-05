@@ -47,15 +47,13 @@ export default function SettingsSlider() {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
     backgroundColor: WayToGoTheme.light.colors.card,
-    width: windowWidth - 35,
+    width: windowWidth,
     height: windowHeight,
-    borderRadius: 30,
-    left: 50,
     display: "flex",
     justifyContent: "center",
     flexDirection: "row",
+    paddingTop: 30,
   },
 
   iconContainer: {
@@ -65,8 +63,9 @@ const styles = StyleSheet.create({
   },
 
   textContainer: {
-    alignSelf: "center",
+    alignSelf: "flex-start",
     marginBottom: 8,
+    marginLeft: 20,
   },
 
   closeIconContainer: {
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   text: {
-    fontSize: 22,
+    fontSize: 30,
     fontWeight: 600,
     marginRight: 10,
   },

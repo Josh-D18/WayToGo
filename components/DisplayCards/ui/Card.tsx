@@ -29,7 +29,6 @@ export const Card = (props: CardProps) => {
     type,
   } = props;
 
-  
   return (
     <View style={[styles.flexContainer, styles.container]}>
       <View style={styles.iconBackground}>
@@ -71,7 +70,8 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: WayToGoTheme.light.colors.primaryForeground,
-    margin: 25,
+    marginVertical: 25,
+    marginHorizontal: 35,
     borderRadius: 10,
     borderLeftColor: "blue",
     borderLeftWidth: 5,

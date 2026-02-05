@@ -11,7 +11,7 @@ export const Feed = (props: FeedProps) => {
   return (
     <View style={styles.contentContainer}>
       <Text style={[styles.itemText, item.active && styles.activeText]}>
-        {item.title}
+        <Text>{item.title}</Text>
       </Text>
     </View>
   );
@@ -29,10 +29,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: WayToGoTheme.light.colors.border,
     borderStyle: "solid",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: 12,
+    paddingVertical: 15,
     color: WayToGoTheme.light.colors.pillInactiveText,
   },
 
