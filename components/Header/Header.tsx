@@ -21,11 +21,11 @@ export const Header = () => {
       </View>
 
       <View style={styles.iconContainer}>
-        <Pressable onPress={() => navigation.navigate("Search")}>
+        <Pressable onPress={() => {}}>
           <Search style={styles.headerSelectionIcons} />
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Profile")}>
+        <Pressable onPress={() => {}}>
           <Settings style={styles.headerSelectionIcons} />
         </Pressable>
       </View>
@@ -36,7 +36,8 @@ export const Header = () => {
 const styles = StyleSheet.create({
   headerContainer: {
     width: "100%",
-    height: 260,
+    height: "100%",
+    marginBottom: WayToGoTheme.spacing.sm,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",

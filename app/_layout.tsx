@@ -1,26 +1,18 @@
-import Index from "@/app/index";
 import { Header } from "@/components/Header/Header";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import "../global.css";
+import HomeTabs from "./tabs/HomeTabs/HomeTabs";
 
 export default function RootLayout() {
-  const Tab = createBottomTabNavigator();
-
+  const Stack = createStackNavigator();
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="index"
-        component={Index}
-        options={{ title: "Home", headerTitle: () => <Header /> }}
-      />
-    </Tab.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="HomeTabs"
+        component={HomeTabs}
+        options={{ headerTitle: () => <Header /> }}
+      ></Stack.Screen>
+    </Stack.Navigator>
   );
 }
-
-// <Stack>
-//   <Stack.Screen
-//     name="index"
-//     options={{ headerTitle: () => <Header /> }}
-//   ></Stack.Screen>
-// </Stack>
