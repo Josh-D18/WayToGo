@@ -1,19 +1,16 @@
 import { DisplayCards } from "@/components/DisplayCards/DisplayCards";
 import FeedNavigation from "@/components/FeedNavigation/FeedNavigation";
 import InfoCard from "@/components/InfoCard/InfoCard";
-import { SettingsSlider } from "@/components/SettingsSlider/SettingsSlider";
 import { getWindowHeight } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
 import { Users, Zap } from "lucide-react-native";
-import React, { useState } from "react";
+import React from "react";
 
 import { StyleSheet, View } from "react-native";
 
 const windowHeight = getWindowHeight();
 
 export default function Index() {
-  const [isActive, setIsActive] = useState(true);
-
   return (
     <View style={styles.main}>
       {/* Daily Info Section */}
@@ -33,8 +30,6 @@ export default function Index() {
       <FeedNavigation />
       {/* Display Info Cards Section */}
       <DisplayCards />
-      {/* Settings */}
-      {isActive && <SettingsSlider active={isActive} setActive={setIsActive} />}
     </View>
   );
 }

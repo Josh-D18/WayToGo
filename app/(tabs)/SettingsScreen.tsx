@@ -1,30 +1,18 @@
 import { getWindowHeight, getWindowWidth } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
-import { Bell, CircleX, Moon } from "lucide-react-native";
+import { Bell, Moon } from "lucide-react-native";
 import React, { useState } from "react";
-import { Pressable, StyleSheet, Switch, Text, View } from "react-native";
-
-interface SettingsSliderProps {
-  active: boolean;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { StyleSheet, Switch, Text, View } from "react-native";
 
 const windowHeight = getWindowHeight();
 const windowWidth = getWindowWidth();
 
-export const SettingsSlider = (props: SettingsSliderProps) => {
-  const { active, setActive } = props;
-
+export default function SettingsSlider() {
   const [activeSwitch, setActiveSwitch] = useState(false);
 
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <View style={styles.closeIconContainer}>
-          <Pressable onPress={() => setActive(!active)}>
-            <CircleX size={25} />
-          </Pressable>
-        </View>
         <View style={styles.textContainer}>
           <Text style={styles.text}>Settings</Text>
         </View>
@@ -55,7 +43,7 @@ export const SettingsSlider = (props: SettingsSliderProps) => {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

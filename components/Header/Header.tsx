@@ -1,9 +1,13 @@
 import { WayToGoTheme } from "@/theme-rn";
+import { useNavigation } from "@react-navigation/native";
 import { Image } from "expo-image";
 import { Search, Settings } from "lucide-react-native";
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+
 export const Header = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.headerContainer}>
       <View style={styles.headerIconContainer}>
@@ -13,15 +17,15 @@ export const Header = () => {
             style={styles.headerIcon}
           />
         </View>
-        <View>
-          <Text style={styles.headerTitle}>WayToGo</Text>
-        </View>
+        <Text style={styles.headerTitle}>WayToGo</Text>
       </View>
+
       <View style={styles.iconContainer}>
-        <Pressable onPress={() => {}}>
+        <Pressable onPress={() => navigation.navigate("Search")}>
           <Search style={styles.headerSelectionIcons} />
         </Pressable>
-        <Pressable onPress={() => {}}>
+
+        <Pressable onPress={() => navigation.navigate("Profile")}>
           <Settings style={styles.headerSelectionIcons} />
         </Pressable>
       </View>
@@ -32,6 +36,7 @@ export const Header = () => {
 const styles = StyleSheet.create({
   headerContainer: {
     width: "100%",
+    height: 260,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
