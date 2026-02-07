@@ -20,5 +20,8 @@ export const DisplayCards = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    display: "flex",
+    alignItems: "center",
+  },
 });

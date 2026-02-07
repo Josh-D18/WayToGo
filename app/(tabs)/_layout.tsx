@@ -1,6 +1,7 @@
 import Index from "@/app/index";
 import "@/global.css";
-import ProfileRootLayout from "@/screens/ProfileScreen/RootLayout";
+import ProfileScreen from "@/screens/ProfileScreen/ProfileScreen";
+import { WayToGoTheme } from "@/theme-rn";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Bell, MapPin, Plus, TrendingUp, UserRound } from "lucide-react-native";
 import React from "react";
@@ -27,7 +28,10 @@ export default function Tabs() {
         options={{
           title: "",
           tabBarIcon: ({ color, focused }) => (
-            <TrendingUp color={color} size={26} />
+            <TrendingUp
+              color={focused ? WayToGoTheme.light.colors.primary : color}
+              size={26}
+            />
           ),
         }}
       />
@@ -37,7 +41,10 @@ export default function Tabs() {
         options={{
           title: "",
           tabBarIcon: ({ color, focused }) => (
-            <MapPin color={color} size={26} />
+            <MapPin
+              color={focused ? WayToGoTheme.light.colors.primary : color}
+              size={26}
+            />
           ),
         }}
       />
@@ -46,7 +53,12 @@ export default function Tabs() {
         component={Index}
         options={{
           title: "",
-          tabBarIcon: ({ color, focused }) => <Plus color={color} size={26} />,
+          tabBarIcon: ({ color, focused }) => (
+            <Plus
+              color={focused ? WayToGoTheme.light.colors.primary : color}
+              size={26}
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -54,26 +66,27 @@ export default function Tabs() {
         component={Index}
         options={{
           title: "",
-          tabBarIcon: ({ color, focused }) => <Bell color={color} size={26} />,
+          tabBarIcon: ({ color, focused }) => (
+            <Bell
+              color={focused ? WayToGoTheme.light.colors.primary : color}
+              size={26}
+            />
+          ),
         }}
       />
       <Tab.Screen
         name="profile"
-        component={ProfileRootLayout}
+        component={ProfileScreen}
         options={{
           title: "",
           tabBarIcon: ({ color, focused }) => (
-            <UserRound color={color} size={26} style={[styles.icon]} />
+            <UserRound
+              color={focused ? WayToGoTheme.light.colors.primary : color}
+              size={26}
+              style={[styles.icon]}
+            />
           ),
         }}
-        listeners={({ navigation }) => ({
-          tabPress: (e) => {
-            e.preventDefault();
-            navigation.navigate("profile", {
-              screen: "Profile",
-            });
-          },
-        })}
       />
     </Tab.Navigator>
   );

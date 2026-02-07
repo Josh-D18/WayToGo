@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: WayToGoTheme.light.colors.card,
     padding: WayToGoTheme.spacing.md,
     marginBottom: 20,
+    boxShadow: "2px 3px 2px rgba(0, 0, 0, 0.1)",
   },
   image: {
     width: 20,

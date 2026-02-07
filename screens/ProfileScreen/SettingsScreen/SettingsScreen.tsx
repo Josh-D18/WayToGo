@@ -1,21 +1,29 @@
 import { getWindowHeight, getWindowWidth } from "@/helpers/dimensions";
 import { WayToGoTheme } from "@/theme-rn";
-import { Bell, Moon } from "lucide-react-native";
+import { useNavigation } from "@react-navigation/native";
+import { ArrowBigLeft, Bell, Moon } from "lucide-react-native";
 import React, { useState } from "react";
-import { StyleSheet, Switch, Text, View } from "react-native";
+import { Pressable, StyleSheet, Switch, Text, View } from "react-native";
 
 const windowHeight = getWindowHeight();
 const windowWidth = getWindowWidth();
 
 export default function SettingsSlider() {
   const [activeSwitch, setActiveSwitch] = useState(false);
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
         <View style={styles.textContainer}>
           <Text style={styles.text}>Settings</Text>
         </View>
+        <Pressable
+          onPress={() => navigation.goBack()}
+          style={styles.navigateContainer}
+        >
+          <ArrowBigLeft size={20} />
+          <Text style={[styles.text, styles.navigateText]}>Back</Text>
+        </Pressable>
         <View style={styles.settingOptionsContainer}>
           <View style={styles.settingContentContainer}>
             <Bell style={styles.icon} />
@@ -105,5 +113,16 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-around",
+  },
+  navigateText: {
+    fontSize: 16,
+    marginLeft: 10,
+  },
+  navigateContainer: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
+    marginLeft: 20,
+    marginVertical: 2,
   },
 });

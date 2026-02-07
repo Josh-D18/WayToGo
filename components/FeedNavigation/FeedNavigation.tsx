@@ -23,5 +23,6 @@ export default function FeedNavigation() {
 const styles = StyleSheet.create({
   container: {
     width: windowWidth,
+    height: 60,
   },
 });

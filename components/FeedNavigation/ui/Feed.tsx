@@ -19,8 +19,8 @@ export const Feed = (props: FeedProps) => {
 
 const styles = StyleSheet.create({
   itemText: {
-    width: 110,
-    height: 50,
+    width: 90,
+    height: "auto",
     fontWeight: 500,
     marginRight: 10,
     borderRadius: 100,
@@ -29,8 +29,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: WayToGoTheme.light.colors.border,
     borderStyle: "solid",
-    paddingVertical: 15,
+    paddingVertical: 10,
     color: WayToGoTheme.light.colors.pillInactiveText,
+    boxShadow: "0px 0.5px 0px rgba(0, 0, 0, 0.1)",
   },
 
   activeText: {

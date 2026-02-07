@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header/Header";
+import SettingsScreen from "@/screens/ProfileScreen/SettingsScreen/SettingsScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import "../global.css";
@@ -13,11 +14,12 @@ export default function RootLayout() {
         headerLeft: () => null,
       }}
     >
-      <Stack.Screen name="HomeTabs" component={Tabs}></Stack.Screen>
+      <Stack.Screen name="home" component={Tabs} />
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{ animation: "slide_from_right" }}
+      />
     </Stack.Navigator>
   );
-}
-
-{
-  /* <Stack.Screen name="Settings" component={SettingsSlider}></Stack.Screen> */
 }

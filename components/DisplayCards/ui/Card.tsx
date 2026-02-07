@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: WayToGoTheme.light.colors.primaryForeground,
     marginVertical: 25,
-    marginHorizontal: 35,
     borderRadius: 10,
     borderLeftColor: "blue",
     borderLeftWidth: 5,

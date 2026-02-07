@@ -25,14 +25,7 @@ export const Header = () => {
           <Search style={styles.headerSelectionIcons} />
         </Pressable>
         {/* Need To Add Types */}
-        <Pressable
-          onPress={() =>
-            navigation.navigate("HomeTabs", {
-              screen: "profile",
-              params: { screen: "Settings" },
-            })
-          }
-        >
+        <Pressable onPress={() => navigation.navigate("Settings")}>
           <Settings style={styles.headerSelectionIcons} />
         </Pressable>
       </View>
