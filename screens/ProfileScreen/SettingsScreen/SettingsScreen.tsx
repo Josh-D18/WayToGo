@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     marginBottom: 8,
     marginLeft: 20,
+    marginTop: 20,
   },
 
   closeIconContainer: {

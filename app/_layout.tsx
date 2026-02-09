@@ -12,6 +12,10 @@ export default function RootLayout() {
       screenOptions={{
         headerTitle: () => <Header />,
         headerLeft: () => null,
+        headerTitleStyle: {
+          marginVertical: 20,
+        },
+        headerTitleAlign: "center",
       }}
     >
       <Stack.Screen name="home" component={Tabs} />
