@@ -4,7 +4,7 @@ import { DarkModeTab } from "./MapTabContent/DarkMode";
 import { NotificationTab } from "./MapTabContent/NotificationTab";
 import { PrivacyAndSecurityTab } from "./MapTabContent/PrivacyAndSecurityTab";
 
-export const ComponentMap = {
+export const MappedComponent = {
   darkmode: DarkModeTab,
   notifications: NotificationTab,
   accountPreferences: AccountPreferencesTab,

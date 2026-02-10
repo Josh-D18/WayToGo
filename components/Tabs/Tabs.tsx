@@ -1,16 +1,16 @@
-import { Bell, ChevronRight, Moon } from "lucide-react-native";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Switch, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { MappedComponent } from "./ui";
 import { TabContainer } from "./ui/TabContent";
 
 interface TabProps {
   linkToPage?: string;
+  type: string;
 }
 
 export function Tab(props: TabProps) {
-  const { linkToPage } = props;
+  const { linkToPage, type } = props;
   const [tabDisplay, setTabDisplay] = useState(false);
-  const [activeSwitch, setActiveSwitch] = useState(false);
 
   useEffect(() => {
     if (linkToPage && linkToPage.length > 0) {
@@ -18,25 +18,21 @@ export function Tab(props: TabProps) {
     }
   }, [linkToPage]);
 
+  const SelectedTab = MappedComponent[type as keyof typeof MappedComponent];
+
   return (
     <View>
       {tabDisplay ? (
         <TabContainer>
-          <Bell style={styles.icon} />
-          <Text style={styles.optionsText}>Notifications</Text>
-          <ChevronRight size={18} />
+          <View style={styles.container}>
+            <SelectedTab />
+          </View>
         </TabContainer>
       ) : (
         <TabContainer>
-          <Moon style={styles.icon} />
-          <Text style={styles.optionsText}>Dark Mode</Text>
-          <Switch
-            trackColor={{ false: "#767577", true: "#81b0ff" }}
-            ios_backgroundColor="#3e3e3e"
-            style={styles.switch}
-            onValueChange={setActiveSwitch}
-            value={activeSwitch}
-          />
+          <View style={styles.container}>
+            <SelectedTab />
+          </View>
         </TabContainer>
       )}
     </View>
@@ -44,16 +40,10 @@ export function Tab(props: TabProps) {
 }
 
 const styles = StyleSheet.create({
-  icon: {
-    marginRight: 20,
-  },
-  switch: {
-    marginRight: 20,
-  },
-  optionsText: {
-    fontSize: 19,
-    fontWeight: "600",
-    marginRight: 90,
-    width: 115,
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
   },
 });

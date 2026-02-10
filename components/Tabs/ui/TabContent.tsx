@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     width: "100%",
     alignSelf: "stretch",
     backgroundColor: WayToGoTheme.light.colors.card,
-    borderBottomWidth: 1,
+    paddingHorizontal: 8,
   },
 });

@@ -27,15 +27,17 @@ export default function SettingsSlider() {
         </Pressable>
         <View style={styles.settingOptionsContainer}>
           <View style={styles.tabContainer}>
-            <Tab />
-            <Tab />
+            <Tab type={"notifications"} />
+            <View style={styles.line} />
+            <Tab type={"darkmode"} />
           </View>
           <View style={styles.tabContainer}>
-            <Tab linkToPage="account" />
-            <Tab linkToPage="privacy" />
+            <Tab linkToPage="account" type={"accountPreferences"} />
+            <View style={styles.line} />
+            <Tab linkToPage="privacy" type={"privacyandsecurity"} />
           </View>
           <View style={styles.tabContainer}>
-            <Tab linkToPage="about" />
+            <Tab linkToPage="about" type={"about"} />
           </View>
 
           <View style={styles.footer}>
@@ -109,6 +111,7 @@ const styles = StyleSheet.create({
     borderColor: WayToGoTheme.light.colors.border,
     marginBottom: 25,
     backgroundColor: WayToGoTheme.light.colors.card,
+    boxShadow: "1px 1px 0px rgba(0, 0, 0, 0.1)",
   },
 
   footer: {
@@ -118,13 +121,20 @@ const styles = StyleSheet.create({
   },
 
   authText: {
-    marginBottom: 25,
     color: WayToGoTheme.light.colors.disruption.main,
     fontSize: 17,
     fontWeight: 600,
+    marginBottom: 30,
   },
 
   versionText: {
     color: WayToGoTheme.light.colors.mutedForeground,
+    marginBottom: 30,
+  },
+
+  line: {
+    borderBottomWidth: 1,
+    paddingBottom: 0,
+    borderBottomColor: WayToGoTheme.light.colors.muted,
   },
 });
