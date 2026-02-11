@@ -14,11 +14,11 @@ const styles = StyleSheet.create({
   tabContentContainer: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
     marginVertical: 27,
     width: "100%",
-    alignSelf: "stretch",
+    alignItems: "center",
+    justifyContent: "space-around",
     backgroundColor: WayToGoTheme.light.colors.card,
-    paddingHorizontal: 8,
+    paddingVertical: 10,
   },
 });

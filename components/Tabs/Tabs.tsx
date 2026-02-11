@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { MappedComponent } from "./ui";
-import { TabContainer } from "./ui/TabContent";
+import { TabContainer } from "./ui/TabContainer";
 
 interface TabProps {
   linkToPage?: string;
@@ -24,26 +24,13 @@ export function Tab(props: TabProps) {
     <View>
       {tabDisplay ? (
         <TabContainer>
-          <View style={styles.container}>
-            <SelectedTab />
-          </View>
+          <SelectedTab />
         </TabContainer>
       ) : (
         <TabContainer>
-          <View style={styles.container}>
-            <SelectedTab />
-          </View>
+          <SelectedTab />
         </TabContainer>
       )}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-  },
-});

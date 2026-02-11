@@ -1,35 +1,23 @@
 import { Moon } from "lucide-react-native";
 import React, { useState } from "react";
-import { StyleSheet, Switch, Text } from "react-native";
+import { Switch, Text, View } from "react-native";
+import styles from "../styles/styles";
 
 export function DarkModeTab() {
   const [activeSwitch, setActiveSwitch] = useState(false);
 
   return (
     <React.Fragment>
-      <Moon style={styles.icon} />
-      <Text style={styles.optionsText}>Dark Mode</Text>
+      <View style={styles.container}>
+        <Moon />
+        <Text style={styles.optionsText}>Dark Mode</Text>
+      </View>
       <Switch
         trackColor={{ false: "#767577", true: "#81b0ff" }}
         ios_backgroundColor="#3e3e3e"
-        style={styles.switch}
         onValueChange={setActiveSwitch}
         value={activeSwitch}
       />
     </React.Fragment>
   );
 }
-
-const styles = StyleSheet.create({
-  icon: {
-    marginRight: 20,
-  },
-  switch: {
-    marginRight: 20,
-  },
-  optionsText: {
-    fontSize: 15,
-    fontWeight: "600",
-    width: "auto",
-  },
-});
