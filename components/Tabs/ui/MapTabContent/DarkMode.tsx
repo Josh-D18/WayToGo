@@ -1,3 +1,4 @@
+import { WayToGoTheme } from "@/theme-rn";
 import { Moon } from "lucide-react-native";
 import React, { useState } from "react";
 import { Switch, Text, View } from "react-native";
@@ -9,7 +10,9 @@ export function DarkModeTab() {
   return (
     <React.Fragment>
       <View style={styles.container}>
-        <Moon />
+        <View style={[styles.darkmode, styles.backgroundSize]}>
+          <Moon color={WayToGoTheme.light.colors.crowding.main} />
+        </View>
         <Text style={styles.optionsText}>Dark Mode</Text>
       </View>
       <Switch

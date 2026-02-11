@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
     backgroundColor: WayToGoTheme.light.colors.card,
-    paddingVertical: 10,
+    paddingVertical: 5,
   },
 });

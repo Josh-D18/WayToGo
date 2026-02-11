@@ -1,5 +1,6 @@
 import Index from "@/app/index";
 import "@/global.css";
+import { NotificationsScreen } from "@/screens/NotificationsScreen/NotificationsScreen";
 import ProfileScreen from "@/screens/ProfileScreen/ProfileScreen";
 import { WayToGoTheme } from "@/theme-rn";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -63,7 +64,7 @@ export default function Tabs() {
       />
       <Tab.Screen
         name="notifications"
-        component={Index}
+        component={NotificationsScreen}
         options={{
           title: "",
           tabBarIcon: ({ color, focused }) => (

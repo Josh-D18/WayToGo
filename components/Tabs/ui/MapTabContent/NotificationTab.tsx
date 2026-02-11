@@ -1,3 +1,4 @@
+import { WayToGoTheme } from "@/theme-rn";
 import { Bell } from "lucide-react-native";
 import React, { useState } from "react";
 import { Switch, Text, View } from "react-native";
@@ -8,7 +9,9 @@ export function NotificationTab() {
   return (
     <React.Fragment>
       <View style={styles.container}>
-        <Bell />
+        <View style={[styles.notification, styles.backgroundSize]}>
+          <Bell color={WayToGoTheme.light.colors.fare.main} />
+        </View>
         <Text style={styles.optionsText}>Push Notifications</Text>
       </View>
       <Switch

@@ -53,7 +53,7 @@ export default function SettingsSlider() {
 const styles = StyleSheet.create({
   settingOptionsContainer: {
     marginTop: 25,
-    marginHorizontal: 20,
+    marginHorizontal: windowWidth < 700 ? 5 : 20,
     paddingVertical: 10,
     paddingHorizontal: 10,
   },

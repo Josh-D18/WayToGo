@@ -1,5 +1,5 @@
 import { Header } from "@/components/Header/Header";
-import SettingsScreen from "@/screens/ProfileScreen/SettingsScreen/SettingsScreen";
+import SettingsScreen from "@/screens/SettingsScreen/SettingsScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import "../global.css";
