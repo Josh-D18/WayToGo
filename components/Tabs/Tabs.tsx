@@ -4,26 +4,26 @@ import { MappedComponent } from "./ui";
 import { TabContainer } from "./ui/TabContainer";
 
 interface TabProps {
-  linkToPage?: string;
+  path?: string;
   type: string;
 }
 
 export function Tab(props: TabProps) {
-  const { linkToPage, type } = props;
+  const { path, type } = props;
   const [tabDisplay, setTabDisplay] = useState(false);
 
   useEffect(() => {
-    if (linkToPage && linkToPage.length > 0) {
+    if (path && path.length > 0) {
       setTabDisplay(true);
     }
-  }, [linkToPage]);
+  }, [path]);
 
   const SelectedTab = MappedComponent[type as keyof typeof MappedComponent];
 
   return (
     <View>
       {tabDisplay ? (
-        <TabContainer>
+        <TabContainer path={path}>
           <SelectedTab />
         </TabContainer>
       ) : (

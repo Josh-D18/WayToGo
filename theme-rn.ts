@@ -4,6 +4,7 @@ export const WayToGoTheme = {
       // Brand Colors
       primary: "#22a061", // GO Transit Green
       primaryForeground: "#ffffff",
+      primaryLight: "#d8ebd8",
 
       // UI Neutrals
       background: "#f8faf9",

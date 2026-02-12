@@ -1,4 +1,7 @@
 import { Header } from "@/components/Header/Header";
+import { AboutScreen } from "@/screens/AboutScreen/AboutScreen";
+import { AccountPreferencesScreen } from "@/screens/AccountPreferencesScreen/AccountPreferencesScreen";
+import { PrivacySecurityScreen } from "@/screens/PrivacySecurityScreen/PrivacySecurityScreen";
 import SettingsScreen from "@/screens/SettingsScreen/SettingsScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
@@ -20,8 +23,23 @@ export default function RootLayout() {
     >
       <Stack.Screen name="home" component={Tabs} />
       <Stack.Screen
-        name="Settings"
+        name="settings"
         component={SettingsScreen}
+        options={{ animation: "slide_from_right" }}
+      />
+      <Stack.Screen
+        name="about"
+        component={AboutScreen}
+        options={{ animation: "slide_from_right" }}
+      />
+      <Stack.Screen
+        name="account"
+        component={AccountPreferencesScreen}
+        options={{ animation: "slide_from_right" }}
+      />
+      <Stack.Screen
+        name="privacy"
+        component={PrivacySecurityScreen}
         options={{ animation: "slide_from_right" }}
       />
     </Stack.Navigator>
