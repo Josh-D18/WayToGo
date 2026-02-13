@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Fare Inspector Alert",
+    "time": "2m ago",
+    "description": "Inspectors reported at Union Station Platform 3.",
+    "recent": true
+  },
+  {
+    "title": "Delay Update",
+    "time": "15m ago",
+    "description": "Lakeshore West is now running 10 mins behind.",
+    "recent": false
+  },
+  {
+    "title": "Service Announcement",
+    "time": "30m ago",
+    "description": "Maintenance work on Line 1 may cause minor delays.",
+    "recent": false
+  }
+]
